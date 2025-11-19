@@ -80,7 +80,6 @@ overlay|BGP vxlan evpn|
 
 ### Настройка <a name="Настройка"></a>
 #### Настройка underlay
-![](underlay.png)
 Для стыка между SPINE-LEAF выделены /31 P2P сети. Где первый адрес в сети - адрес для SPINE. Второй адрес - адрес для LEAF.
 Пример:
 + **10.200.1.0/31 vos-spine-1 <--> vos-leaf-1**
@@ -210,11 +209,9 @@ router bgp 65000
     remote-as 64520
 ```
 Проверить поднятие сессии можно при помощи show ip bgp summary. Посмотрим как это выглядит на vos-leaf-1
-```
 ![](sh ip bgp sum.png)
-```
+
 #### Настройка overlay
-![](overlay.png)
 Настроим overlay при помощи eBGP.
 
 
