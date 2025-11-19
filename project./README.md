@@ -209,7 +209,7 @@ router bgp 65000
     remote-as 64520
 ```
 Проверить поднятие сессии можно при помощи show ip bgp summary. Посмотрим как это выглядит на vos-leaf-1
-![](sh ip bgp sum.png)
+![](ip_bgp_sum.png)
 
 #### Настройка overlay
 Настроим overlay при помощи eBGP.
@@ -267,9 +267,9 @@ router bgp 65000
 
 ```
 Проверить поднятие сессии можно при помощи show bgp l2vpn evpn summary. Посмотрим так же на vos-leaf-1:
-```
-![](sh bgp l2vpn evpn sum.png)
-```
+
+![](sh_bgp_l2vpn_evpn_sum.png)
+
 #### Настройка VXLAN
 Включаем поддержку VXLAN,L3, привязку vni к номеру vlan:
 ```
@@ -300,9 +300,9 @@ interface nve1
     ingress-replication protocol bgp    
 ```
 Можно проверить с какими пирами построились туннели и их состояние 
-```
-![](sh nve peers.png)
-```
+
+![](sh_nve_peers.png)
+
 Настраиваем evpn route type-2, вручную задаём route-target 
 ```
 router bgp 65000
@@ -367,18 +367,18 @@ interface Vlan101
   ```
 #### Выполняем проверки связности
 SRV1 пингует шлюз и пингует SRV2
- ```
-![](srv1 ping.png)
- ```
+
+![](srv1_ping.png)
+
 Проверяем маршруты на leaf
- ```
-![](sh ip route.png)
- ```
+
+![](ip_route.png)
+
 
 Проверяем таблицу мак адресов на лифах разных POD. Видим, что маки конечных устройств видны с обеих сторон
- ```
-![](sh mac.png)
- ```
+
+![](mac.png)
+
 
 
 
