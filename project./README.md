@@ -74,7 +74,7 @@ zap-leaf-2|leaf|cisco nexus 9k
 Ниже перечислены технологии, используемые в данном проекте:
 |Для чего|Технология|Комментарий|
 |---|---|---|
-underlay|iBGP|прост в настройке и администрировании
+underlay|eBGP|прост в настройке и администрировании
 overlay|BGP vxlan evpn|
 
 
@@ -136,7 +136,7 @@ nv overlay evpn
 feature bgp
 feature nv overlay
 ```
-В качестве underlay протокола будет использоваться iBGP внутри POD и eBGP для стыков между POD:
+В качестве underlay протокола будет использоваться eBGP внутри POD и eBGP для стыков между POD:
 |Device|ASN|
 |---|---|
 |vos-spine-1| 65501
@@ -211,7 +211,7 @@ router bgp 65000
 Проверить поднятие сессии можно при помощи show ip bgp summary. Посмотрим как это выглядит на vos-leaf-1
 ![](ip_bgp_sum.png)
 #### Настройка overlay
-Настроим overlay при помощи eBGP.
+Настроим overlay.
 
 
 Пример настройки со vos-spine-1:
